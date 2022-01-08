@@ -16,12 +16,12 @@ contract Migrations {
 
     // restricted is the modifier making sure the owner of the contract can use these functions
     // instead of putting the if into both functions we can use a modifier
-    function set_completed(uint completed) public restricted {
+    function setCompleted(uint completed) public restricted {
         last_completed_migration = completed;
     }
-    
+
     function upgrade(address new_address) public restricted {   
         Migrations upgraded = Migrations(new_address);
-        upgraded.set_completed(last_completed_migration);
+        upgraded.setCompleted(last_completed_migration);
     }
 }

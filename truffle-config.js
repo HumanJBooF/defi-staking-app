@@ -4,9 +4,12 @@ require("babel-polyfill");
 module.exports = {
   networks: {
     development: {
+      // using WSL2 I had to use ganache-cli
+      // turn that on first, then turn on ganache GUI
+      // was able to connect that way
       host: "127.0.0.1",
-      port: "7545",
-      netword_id: "*", // match any network
+      port: "8545",
+      network_id: "*", // match any network
     },
   },
   contracts_directory: "./src/contracts",
